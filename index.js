@@ -4,12 +4,12 @@ const init = () => {
     const categoryContainer = document.getElementById("category-container");
     const productContainer = document.getElementById("product-container");
 
-    // যদি ক্যাটাগরি কন্টেইনার থাকে, তবে এটি প্রোডাক্ট পেজ
+   
     if (categoryContainer) {
         loadCategories();
-        loadProducts(false); // সব প্রোডাক্ট দেখাবে
+        loadProducts(false);
     } else if (productContainer) {
-        // যদি শুধু প্রোডাক্ট কন্টেইনার থাকে (হোম পেজ), তবে ৩টি দেখাবে
+        
         loadProducts(true);
     }
 };
