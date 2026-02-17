@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SwiftCart - All Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
-<body>
-    <h1>product</h1>
+<body class="bg-gray-50">
+    <nav class="navbar bg-white px-4 md:px-12 max-w-7xl mx-auto sticky top-0 z-50 shadow-sm">
+        <div class="navbar-start">
+            <a href="index.html" class="text-blue-600 font-extrabold text-2xl tracking-tight">SwiftCart</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal gap-4 px-1 text-gray-600 font-semibold">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html" class="text-blue-600">Product</a></li>
+                <li><a>About</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <button class="btn btn-ghost btn-circle relative">
+                <div class="indicator">
+                    <span id="cart-count" class="badge badge-sm indicator-item bg-blue-600 text-white">0</span>
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-10">
+        <div id="category-container" class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
+            </div>
+
+        <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            </div>
+    </main>
+
+    <script src="./index.js"></script>
 </body>
 </html>
