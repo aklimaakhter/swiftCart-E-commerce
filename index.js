@@ -105,48 +105,48 @@ const addToCart = () => {
     if (cartElement) cartElement.innerText = cartCount;
 };
 
-// const showDetails = (id) => {
-//     fetch(`https://fakestoreapi.com/products/${id}`)
-//         .then(res => res.json())
-//         .then(product => {
-//             const existingModal = document.getElementById("dt_modal_container");
-//             if (existingModal) existingModal.remove();
+const showDetails = (id) => {
+    fetch(`https://fakestoreapi.com/products/${id}`)
+        .then(res => res.json())
+        .then(product => {
+            const existingModal = document.getElementById("dt_modal_container");
+            if (existingModal) existingModal.remove();
 
-//             const modalContainer = document.createElement("div");
-//             modalContainer.id = "dt_modal_container";
-//             modalContainer.innerHTML = `
-//                 <dialog id="dt_modal" class="modal modal-bottom sm:modal-middle">
-//                   <div class="modal-box max-w-lg p-0 overflow-hidden bg-white rounded-xl shadow-2xl border border-gray-100">
-//                     <div class="flex flex-col md:flex-row">
-//                         <div class="md:w-5/12 bg-gray-50 p-6 flex items-center justify-center">
-//                             <img src="${product.image}" class="max-h-48 object-contain">
-//                         </div>
-//                         <div class="md:w-7/12 p-6 flex flex-col justify-between">
-//                             <div>
-//                                 <div class="flex justify-between items-start mb-2">
-//                                     <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">${product.category}</span>
-//                                     <form method="dialog">
-//                                         <button class="btn btn-sm btn-circle btn-ghost">✕</button>
-//                                     </form>
-//                                 </div>
-//                                 <h3 class="font-bold text-lg text-gray-800 mb-2 leading-tight">${product.title}</h3>
-//                                 <p class="text-gray-500 text-xs leading-relaxed line-clamp-3 mb-4">${product.description}</p>
-//                             </div>
-//                             <div class="flex items-center justify-between mt-4">
-//                                 <p class="text-2xl font-bold text-gray-900">$${product.price}</p>
-//                                 <button onclick="addToCart()" class="btn btn-primary btn-md">Buy Now</button>
-//                             </div>
-//                         </div>
-//                     </div>
-//                   </div>
-//                   <form method="dialog" class="modal-backdrop bg-black/20"><button>close</button></form>
-//                 </dialog>`;
+            const modalContainer = document.createElement("div");
+            modalContainer.id = "dt_modal_container";
+            modalContainer.innerHTML = `
+                <dialog id="dt_modal" class="modal modal-bottom sm:modal-middle">
+                  <div class="modal-box max-w-lg p-0 overflow-hidden bg-white rounded-xl shadow-2xl border border-gray-100">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 bg-gray-50 p-6 flex items-center justify-center">
+                            <img src="${product.image}" class="max-h-48 object-contain">
+                        </div>
+                        <div class="md:w-7/12 p-6 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">${product.category}</span>
+                                    <form method="dialog">
+                                        <button class="btn btn-sm btn-circle btn-ghost">✕</button>
+                                    </form>
+                                </div>
+                                <h3 class="font-bold text-lg text-gray-800 mb-2 leading-tight">${product.title}</h3>
+                                <p class="text-gray-500 text-xs leading-relaxed line-clamp-3 mb-4">${product.description}</p>
+                            </div>
+                            <div class="flex items-center justify-between mt-4">
+                                <p class="text-2xl font-bold text-gray-900">$${product.price}</p>
+                                <button onclick="addToCart()" class="btn btn-primary btn-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <form method="dialog" class="modal-backdrop bg-black/20"><button>close</button></form>
+                </dialog>`;
             
-//             document.body.appendChild(modalContainer);
-//             const modal = document.getElementById("dt_modal");
-//             modal.showModal();
-//         });
-// };
+            document.body.appendChild(modalContainer);
+            const modal = document.getElementById("dt_modal");
+            modal.showModal();
+        });
+};
 
-// এই লাইনটি নিশ্চিত করবে পেজ লোড হলে ফাংশনটি রান করবে
+
 window.onload = init;
